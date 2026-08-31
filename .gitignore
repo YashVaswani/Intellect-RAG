@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+venv/
+env/
+.venv/
+
+# Application Data & Uploads
+chat_history.db
+*.db-wal
+*.db-shm
+*.db
+*.sqlite*
+app.log
+*.log
+*.log*
+temp_uploads/
+watch_folder/
+payloads/
+data/
+.files/
+scratch/
+
+# Keys & Certificates
+*.pem
+*.key
+*.cert
+*.crt
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Agent & Configs
+.antigravityignore
+.gemini/
+.agents/
+
+# Node/Next.js
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/build/
+frontend/*.tsbuildinfo
+frontend/.env*
+!frontend/.env.example
+
+# Env files
+.env
+.env.*
+.env*.local
+!.env.example

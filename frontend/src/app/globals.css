@@ -1,0 +1,154 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  :root {
+    --background: #ffffff;
+    --foreground: #09090b;
+    --card: #ffffff;
+    --card-foreground: #09090b;
+    --popover: #ffffff;
+    --popover-foreground: #09090b;
+    --primary: #18181b;
+    --primary-foreground: #fafafa;
+    --secondary: #f4f4f5;
+    --secondary-foreground: #18181b;
+    --muted: #f4f4f5;
+    --muted-foreground: #71717a;
+    --accent: #f4f4f5;
+    --accent-foreground: #18181b;
+    --destructive: #ef4444;
+    --destructive-foreground: #fafafa;
+    --border: #e4e4e7;
+    --input: #e4e4e7;
+    --ring: #18181b;
+  }
+
+  .dark {
+    --background: #212121; /* ChatGPT like dark grey */
+    --foreground: #ececf1;
+    --card: #2f2f2f;
+    --card-foreground: #ececf1;
+    --popover: #212121;
+    --popover-foreground: #ececf1;
+    --primary: #10a37f; /* OpenAI green accent */
+    --primary-foreground: #ffffff;
+    --secondary: #2f2f2f;
+    --secondary-foreground: #ececf1;
+    --muted: #2f2f2f;
+    --muted-foreground: #b4b4b5;
+    --accent: #2f2f2f;
+    --accent-foreground: #ececf1;
+    --destructive: #ef4444;
+    --destructive-foreground: #fafafa;
+    --border: #383838; /* Sidebar border */
+    --input: #383838;
+    --ring: #10a37f;
+  }
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+}
+
+/* Custom Scrollbar for chat area */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--muted-foreground);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #71717a;
+}
+
+/* Premium Markdown Table Styling */
+.prose table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.prose th {
+  background-color: var(--secondary);
+  color: var(--foreground);
+  font-weight: 600;
+  text-align: left;
+  padding: 0.875rem 1.25rem; /* Generous cell spacing */
+  border-bottom: 2px solid var(--border);
+  white-space: nowrap;
+}
+
+.prose td {
+  padding: 0.875rem 1.25rem; /* Generous cell spacing */
+  border-bottom: 1px solid var(--border);
+  color: var(--foreground);
+  vertical-align: middle;
+}
+
+.prose tr:last-child td {
+  border-bottom: none;
+}
+
+.prose tr:nth-child(even) td {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.prose tr:hover td {
+  background-color: var(--secondary);
+  transition: background-color 0.15s ease-in-out;
+}
+
+/* Sequential Index Column (# or S.No) */
+.prose th:first-child,
+.prose td:first-child {
+  text-align: center;
+  font-weight: 700;
+  color: var(--primary);
+  min-width: 3.25rem;
+  border-right: 1px solid var(--border);
+}
